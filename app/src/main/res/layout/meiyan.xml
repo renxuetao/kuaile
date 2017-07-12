@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent_black"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="美颜调节"
+            android:textColor="@color/white"
+            android:textSize="14dp"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_height="0.5dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:text="磨皮"/>
+            <SeekBar
+                android:id="@+id/sb_mopi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progress="60"
+                android:max="100"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:text="美白"/>
+            <SeekBar
+                android:id="@+id/sb_meibai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progress="50"
+                android:max="100"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:text="红润"/>
+            <SeekBar
+                android:id="@+id/sb_hongrun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progress="30"
+                android:max="100"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/meiyan_value_close"
+        android:background="@color/transparent"
+        android:text="@string/btn_share_cancel"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>

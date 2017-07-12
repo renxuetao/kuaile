@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/frame_living_root_container"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:scaleType="fitXY"-->
+    <!--android:src="@drawable/image_living_bg"/>-->
+
+    <RelativeLayout
+        android:id="@+id/aspectFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/zhibo_wel_up">
+
+        <android.opengl.GLSurfaceView
+            android:id="@+id/camera_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true" />
+        <com.klzb.live.living.CameraHintView
+            android:id="@+id/camera_hint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+
+    <include layout="@layout/activity_add_living"/>
+
+    <FrameLayout
+        android:id="@+id/live_viewflipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:clickable="false">
+
+        <include layout="@layout/layout_live_top"/>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone"
+        android:id="@+id/meiyan_container">
+        <include layout="@layout/meiyan"/>
+    </FrameLayout>
+</FrameLayout>

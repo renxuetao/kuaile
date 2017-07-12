@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'bugly'
+bugly {
+    appId = '0010b50033'
+    appKey = '68264417-6e12-4fba-977d-cacb2c8148b2'
+}
+android {
+
+    compileSdkVersion 24
+    buildToolsVersion '26.0.0'
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    defaultConfig {
+        applicationId "com.klzb.live"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        aaptOptions.cruncherEnabled = false
+        aaptOptions.useNewCruncher = false
+    }
+    signingConfigs {
+        debug {
+
+        }
+        release {
+            storeFile file('../keystore/sisi.jks')
+            keyAlias 'sisi'
+            keyPassword 'dfsbLPL6wjG4t68kjd'
+            storePassword 'dfsbLPL6wjG4t68kjd'
+        }
+    }
+
+    buildTypes {
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            //加载默认混淆配置文件
+            //proguardFiles getDefaultProguardFile('proguard-Android.txt'), 'proguard-rules.pro'
+            //签名
+            signingConfig signingConfigs.release
+        }
+        release {
+            debuggable true
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            //加载默认混淆配置文件
+            //proguardFiles getDefaultProguardFile('proguard-Android.txt'), 'proguard-rules.pro'
+            //签名
+            signingConfig signingConfigs.release
+        }
+    }
+}
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:+'
+    compile 'com.android.support:design:+'
+    compile 'com.android.support:recyclerview-v7:+'
+    compile 'cn.leancloud.android:avoscloud-sdk:v3.16.4'
+    compile('cn.leancloud.android:avoscloud-push:v3.16.4@aar') { transitive = true }
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.smart.androidutils:androidutils:1.0.3'
+    compile 'com.smart.androidui:androidui:1.1.2'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.github.stuxuhai:jpinyin:1.0'
+    compile project(':androidHorizontalListView')
+    compile project(':leancloudchatkit')
+    compile 'com.android.support:multidex:1.0.1'
+    compile project(':loginsharesdk')
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.isseiaoki:simplecropview:1.1.4'
+    compile project(':lrcview')
+    compile 'com.tencent.bugly:crashreport:latest.release'//腾讯bugly 软件分析工具
+    compile 'com.ksyun.media:libksylive-java:2.2.1'
+    compile 'com.ksyun.media:libksylive-arm64:2.2.1'
+    compile 'com.ksyun.media:libksylive-armv7a:2.2.1'
+    compile 'com.ksyun.media:libksylive-x86:2.2.1'
+}
